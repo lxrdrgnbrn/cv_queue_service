@@ -3,7 +3,7 @@ import requests
 import os
 import time
 
-API_URL = "http://127.0.0.1:8000"
+API_URL = API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
 
 st.title("CV Service")
 
