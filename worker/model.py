@@ -14,6 +14,9 @@ class ObjectDetector:
         ploted_image = result.plot()
         cv2.imwrite(output_path, ploted_image)
         
-        objects = result.boxes.cls.tolist()
         
-        return[]
+        class_ids = result.boxes.cls.tolist()
+        
+        objects = [result.names[int(cls_id)] for cls_id in class_ids]
+        return objects
+    
